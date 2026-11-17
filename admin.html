@@ -1,0 +1,22 @@
+<!doctype html><html lang="fr"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Administration — NEO ARCH</title><link rel="stylesheet" href="css/style.css"></head><body>
+<header class="topbar"><a class="brand" href="index.html"><span class="brand-mark">N</span> NEO <b>ARCH</b></a><nav><a href="catalogue.html">Catalogue</a><a class="active" href="admin.html">Administration</a></nav></header>
+<main class="page-wrap admin-wrap"><section class="page-head compact"><p class="eyebrow">ESPACE PRIVÉ</p><h1>Console <em>éditoriale.</em></h1><p class="lead">Gérer les fiches de la collection depuis un ordinateur ou un téléphone.</p></section>
+<div id="setup-warning" class="notice hidden"></div>
+<section id="login-panel" class="panel auth-panel"><p class="eyebrow">AUTHENTIFICATION</p><h2>Connexion administrateur</h2><form id="login-form"><label>Adresse e-mail<input type="email" id="email" required autocomplete="username"></label><label>Mot de passe<input type="password" id="password" required autocomplete="current-password"></label><button class="button button-dark" type="submit">Se connecter <span>→</span></button><p id="login-message" class="form-message"></p></form><p class="small muted">Les comptes sont créés depuis le tableau de bord Supabase. Aucun bouton d'inscription public n'est activé.</p></section>
+<section id="dashboard" class="hidden"><div class="admin-toolbar"><div><p class="eyebrow">SESSION ACTIVE</p><p id="admin-email" class="muted"></p></div><button id="logout" class="button button-outline">Déconnexion</button></div>
+<div class="admin-grid"><section class="panel"><p class="eyebrow">NOUVELLE ENTRÉE</p><h2 id="form-title">Ajouter une espèce</h2><form id="species-form">
+<input type="hidden" id="species-id">
+<label>Nom commun *<input id="common_name" required maxlength="120" placeholder="Ex. Renard roux"></label>
+<label>Nom scientifique *<input id="scientific_name" required maxlength="160" placeholder="Ex. Vulpes vulpes"></label>
+<div class="two-col"><label>Classe<select id="class_name"><option value="">Choisir…</option><option>Mammalia</option><option>Aves</option><option>Reptilia</option><option>Amphibia</option><option>Actinopterygii</option><option>Insecta</option><option>Autre</option></select></label><label>Ordre<input id="order_name" placeholder="Carnivora"></label></div>
+<div class="two-col"><label>Famille<input id="family_name" placeholder="Canidae"></label><label>Statut UICN<select id="conservation_status"><option value="">Non renseigné</option><option>LC</option><option>NT</option><option>VU</option><option>EN</option><option>CR</option><option>EW</option><option>EX</option><option>DD</option><option>NE</option></select></label></div>
+<label>Habitat<input id="habitat" maxlength="240" placeholder="Forêts, prairies…"></label>
+<label>Répartition<input id="distribution" maxlength="500" placeholder="Europe, Asie…"></label>
+<label>Alimentation<input id="diet" maxlength="240" placeholder="Omnivore…"></label>
+<label>Description scientifique<textarea id="description" rows="5" placeholder="Informations vérifiées, comportement, caractéristiques…"></textarea></label>
+<label>Photographie principale<input id="photo" type="file" accept="image/jpeg,image/png,image/webp"></label><p class="small muted">Formats JPG, PNG ou WebP. Préfère des images dont tu possèdes les droits ou dont la licence autorise la réutilisation.</p>
+<label class="check-label"><input id="published" type="checkbox" checked> Publier cette fiche dans le catalogue</label>
+<div class="form-actions"><button class="button button-dark" type="submit">Enregistrer l'espèce <span>→</span></button><button class="button button-outline hidden" id="cancel-edit" type="button">Annuler</button></div><p id="save-message" class="form-message"></p></form></section>
+<section class="panel"><p class="eyebrow">COLLECTION</p><h2>Espèces enregistrées</h2><div id="admin-list"><p class="muted">Chargement…</p></div></section></div></section></main>
+<footer><a class="brand" href="index.html">NEO <b>ARCH</b></a><span>ADMINISTRATION</span><span>© NEO ARCH</span></footer>
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script><script src="js/config.js"></script><script src="js/app.js"></script><script src="js/admin.js"></script></body></html>
